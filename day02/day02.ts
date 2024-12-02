@@ -1,13 +1,13 @@
 import * as fs from "fs";
 import * as path from "path";
 
-function solutionPart1() {
+function countSafeReport() {
   const data = readFile(path.join(__dirname, "./input.txt"));
   const lines = data.map((line) => getNumbers(line));
   let count = 0;
 
   for (let i = 0; i < lines.length; i++) {
-    if (isSafe(lines[i])) {
+    if (isSafe(lines[i]) || isSafeWithRemoval(lines[i])) {
       count++;
     }
   }
@@ -32,6 +32,19 @@ function isSafe(numbers: number[]) {
   return true;
 }
 
+function isSafeWithRemoval(numbers: number[]) {
+  for (let i = 0; i < numbers.length; i++) {
+    const sliceCurrent = numbers.slice(0, i);
+    const sliceNext = numbers.slice(i + 1);
+    const modifiedList = sliceCurrent.concat(sliceNext);
+
+    if (isSafe(modifiedList)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function readFile(filePath: string) {
   const fileContent = fs.readFileSync(filePath, "utf-8");
   return fileContent.split("\n");
@@ -43,4 +56,5 @@ function getNumbers(line: string) {
     .map((currentNumber) => parseInt(currentNumber.trim(), 10));
 }
 
-console.log(`Solution part 1: ${solutionPart1()}`); //242
+console.log(`Solution part 1: 242`);
+console.log(`Solution part 2: ${countSafeReport()}`);
