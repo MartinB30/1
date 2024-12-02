@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-const pathOfFile = path.join(__dirname, "./input/day1.txt");
+const pathOfFile = path.join(__dirname, "./input.txt");
 const bothLists = readFile();
 const santasFirstList = bothLists[0];
 const santasSecondList = bothLists[1];
@@ -69,5 +69,7 @@ function countSimilar(
 }
 
 const part2Score = countSimilar(santasFirstList, santasSecondList);
+console.log(`Solution part1: ${part1Difference}`);
+console.log(`Solution part2: ${part2Score}`);
 //Part 1 solution: 3246517
 //Part 2 solution: 29379307
