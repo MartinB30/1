@@ -27,8 +27,8 @@ function calculateDifferencePart1(
   santasFirstList: Array<number>,
   santasSecondList: Array<number>
 ) {
-  const sortedFirstList = santasFirstList.sort();
-  const sortedSecondList = santasSecondList.sort();
+  const sortedFirstList = santasFirstList.sort((a, b) => a - b);
+  const sortedSecondList = santasSecondList.sort((a, b) => a - b);
 
   let totalDifference = 0;
 
