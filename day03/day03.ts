@@ -9,18 +9,27 @@ function readFile(filePath: string) {
 
 function calculateMultiplication(filePath: string) {
   const input = readFile(filePath);
-  const regex = /mul\((\d+),(\d+)\)/g;
+  const regex = /do\(\)|don't\(\)|mul\((\d+),(\d+)\)/g;
 
+  let isActive: boolean = true;
   let match;
   let total = 0;
 
   while ((match = regex.exec(input))) {
-    const x = parseInt(match[1]);
-    const y = parseInt(match[2]);
-    total += x * y;
+    const [button, number1, number2] = match;
+    if (button === "do()") {
+      isActive = true;
+    } else if (button === "don't()") {
+      isActive = false;
+    } else {
+      if (isActive) {
+        total += parseInt(number1) * parseInt(number2);
+      }
+    }
   }
 
   return total;
 }
 
-console.log(calculateMultiplication(filePath));
+console.log(`Solution part 1: 196826776`);
+console.log(`Solution part 2: ${calculateMultiplication(filePath)}`);
