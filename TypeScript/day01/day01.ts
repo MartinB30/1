@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-const pathOfFile = path.join(__dirname, "./input.txt");
+const pathOfFile = path.join(__dirname, "../../challenges/day01/input.txt");
 const bothLists = readFile();
 const santasFirstList = bothLists[0];
 const santasSecondList = bothLists[1];

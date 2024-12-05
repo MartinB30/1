@@ -2,7 +2,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 function countSafeReport() {
-  const data = readFile(path.join(__dirname, "./input.txt"));
+  const data = readFile(path.join(__dirname, "../../challenges/day02/input.txt"));
   const lines = data.map((line) => getNumbers(line));
   let count = 0;
 

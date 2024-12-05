@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-const filePath = path.join(__dirname, "./input.txt");
+const filePath = path.join(__dirname, "../../challenges/day03/input.txt");
 
 function readFile(filePath: string) {
   return fs.readFileSync(filePath, "utf-8");
