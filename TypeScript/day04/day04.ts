@@ -139,38 +139,20 @@ function findMas(filePath: string) {
       const currentChar = currentLine[j];
       const topLeftChar = lines[i - 1][j - 1];
       const topRightChar = lines[i - 1][j + 1];
-      const buttomLeftChar = lines[i + 1][j - 1];
-      const buttomRightChar = lines[i + 1][j + 1];
+      const bottomLeftChar = lines[i + 1][j - 1];
+      const bottomRightChar = lines[i + 1][j + 1];
 
       if (currentChar === "A") {
         if (
-          topLeftChar === "M" &&
-          topRightChar === "S" &&
-          buttomLeftChar === "M" &&
-          buttomRightChar === "S"
+          (topLeftChar === "M" && bottomRightChar === "S") ||
+          (topLeftChar === "S" && bottomRightChar === "M")
         ) {
-          total++;
-        } else if (
-          topLeftChar === "S" &&
-          topRightChar === "M" &&
-          buttomLeftChar === "S" &&
-          buttomRightChar === "M"
-        ) {
-          total++;
-        } else if (
-          topLeftChar === "S" &&
-          topRightChar === "S" &&
-          buttomLeftChar === "M" &&
-          buttomRightChar === "M"
-        ) {
-          total++;
-        } else if (
-          topLeftChar === "M" &&
-          topRightChar === "M" &&
-          buttomLeftChar === "S" &&
-          buttomRightChar === "S"
-        ) {
-          total++;
+          if (
+            (topRightChar === "M" && bottomLeftChar === "S") ||
+            (topRightChar === "S" && bottomLeftChar === "M")
+          ) {
+            total++;
+          }
         }
       }
     }
