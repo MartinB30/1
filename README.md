@@ -24,12 +24,14 @@ Each day's folder includes:
 
 Example structure for a day:
 
+    challenges/
+        └──day01/
+            ├── challenge.txt
+            └── input.txt
     Typescript/
         ├── day01/
-            ├── challenge.txt
-            ├── day01.ts
-            └── input.txt
-        ├── day02/
+            └── day01.ts
+        └── day02/
 
 # 🚀 How to Run
 
@@ -52,7 +54,7 @@ Python Solutions:
 | Day 02 |   ✅   |   ✅   |     ✅     |   ⬜   |
 | Day 03 |   ✅   |   ✅   |     ✅     |   ⬜   |
 | Day 04 |   ✅   |   ✅   |     ✅     |   ⬜   |
-| Day 05 |   ⬜   |   ⬜   |     ⬜     |   ⬜   |
+| Day 05 |   ✅   |   ✅   |     ✅     |   ⬜   |
 | Day 06 |   ⬜   |   ⬜   |     ⬜     |   ⬜   |
 | Day 07 |   ⬜   |   ⬜   |     ⬜     |   ⬜   |
 | Day 08 |   ⬜   |   ⬜   |     ⬜     |   ⬜   |
