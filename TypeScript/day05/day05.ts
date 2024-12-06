@@ -8,8 +8,8 @@ function readFile(filePath: string, isUpdate: boolean = false) {
   const [rules, updates] = file.split("\n\n");
 
   return isUpdate
-    ? updates.split("\n").filter((line) => line.trim())
-    : rules.split("\n").filter((line) => line.trim());
+    ? updates.split("\n").map((line) => line.trim())
+    : rules.split("\n").map((line) => line.trim());
 }
 
 function parser(input: string[], isUpdate: boolean = false) {
